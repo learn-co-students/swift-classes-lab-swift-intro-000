@@ -12,6 +12,7 @@
  
  To start, define a class called `Thermometer`. This class should contain one property, `fahrenheit` (a `Double`), to hold the temperature represented by the thermometer. This property should be a _variable_. You should also create an initializer for this class that takes one parameter and assigns that parameter to the `fahrenheit` property.
  */
+/*
 class Thermometer {
     var description: String = "The current temperature is \(thermometer.fahrenheit) °F, (\(thermometer.celsius) °C))"
     var fahrenheit: Double {
@@ -40,13 +41,35 @@ class Thermometer {
         self.description = description
     }
 }
+ */
+// Correct way.
+class Thermometer {
+    var fahrenheit: Double
+    var celsius: Double {
+        get {
+            return (fahrenheit - 32) * (5.0 / 9.0)
+        }
+        
+        set {
+            fahrenheit = newValue * (9.0 / 5.0) + 32
+        }
+    }
+    
+    var description: String {
+        return "The current temperature is \(fahrenheit) °F (\(celsius) °C)"
+    }
+    
+    init(fahrenheit: Double) {
+        self.fahrenheit = fahrenheit
+    }
+}
 /*: section2
  
  ## Question 2
  
  Good! Now, create a `Thermometer` instance that has an initial value of `88.0` for `fahrenheit`. This instance should be a _variable_. Call it `thermometer`.
  */
-var thermometer = Thermometer(fahrenheit: 88.0, celsius: 0, description: "The current temperature is \(thermometer.fahrenheit) °F, (\(thermometer.celsius) °C))")
+var thermometer = Thermometer(fahrenheit: 88.0)
 assert(thermometer.fahrenheit == 88.0, "thermometer.fahrenheit is \(thermometer.fahrenheit)")
 /*: section3
  
@@ -79,7 +102,6 @@ assert(thermometer.celsius - 37.7 < 0.1, "thermometer.celsius is \(thermometer.c
  Now set the `celsius` temperature of your `Thermometer` instance to 100.0
  */
 thermometer.celsius = 100.0
-
 assert(thermometer.celsius == 100.0, "thermometer.celsius is \(thermometer.celsius)")
 assert(thermometer.fahrenheit == 212.0, "thermometer.fahrenheit is \(thermometer.fahrenheit)")
 /*: section7
