@@ -13,6 +13,27 @@
  To start, define a class called `Thermometer`. This class should contain one property, `fahrenheit` (a `Double`), to hold the temperature represented by the thermometer. This property should be a _variable_. You should also create an initializer for this class that takes one parameter and assigns that parameter to the `fahrenheit` property.
  */
 // write your code here
+class Thermometer {
+    var fahrenheit : Double
+    var celsius : Double {
+        get {
+            return (fahrenheit - 32) * 5/9
+        }
+        set {
+            fahrenheit = newValue / (5/9) + 32
+        }
+    }
+    
+    var description : String {
+        get {
+            return "The current temperature is \(self.fahrenheit)°F (\(self.celsius)°C)"
+        }
+    }
+    
+    init(f : Double) {
+        self.fahrenheit = f;
+    }
+};
 
 /*: section2
  
@@ -22,7 +43,8 @@
  */
 // write your code here
 
-assert(thermometer.fahrenheit == 88.0, "thermometer.fahrenheit is \(thermometer.fahrenheit)")
+var thermometer = Thermometer(f : 88.0)
+assert(thermometer.fahrenheit == 88.0, "thermometer.fahrenheit is (\(thermometer.fahrenheit))")
 
 /*: section3
  
@@ -42,6 +64,7 @@ assert(thermometer.celsius - 31.1 < 0.1, "thermometer.celsius is \(thermometer.c
  */
 // write your code here
 
+thermometer.fahrenheit = 100.0
 assert(thermometer.fahrenheit == 100.0, "thermometer.fahrenheit is \(thermometer.fahrenheit)")
 assert(thermometer.celsius - 37.7 < 0.1, "thermometer.celsius is \(thermometer.celsius)")
 
@@ -59,6 +82,7 @@ assert(thermometer.celsius - 37.7 < 0.1, "thermometer.celsius is \(thermometer.c
  */
 // write your code here
 
+thermometer.celsius = 100.0
 assert(thermometer.celsius == 100.0, "thermometer.celsius is \(thermometer.celsius)")
 assert(thermometer.fahrenheit == 212.0, "thermometer.fahrenheit is \(thermometer.fahrenheit)")
 
