@@ -9,4 +9,11 @@
 import Foundation
 
 
+class House {
+   var thermometer = Thermometer.init(fahrenheit: 0.0)
+    func grandmaIsOver(){
+        thermometer.fahrenheit = 90.0
+    }
+    }
+
 
