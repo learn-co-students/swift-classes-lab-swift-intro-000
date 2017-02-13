@@ -8,5 +8,13 @@
 
 import Foundation
 
+class House {
+    let thermometer = Thermometer(fahrenheit: 55.7)
+    
+    
+    func grandmaIsOver() {
+        thermometer.fahrenheit = 90.0
+    }
+}
 
 
