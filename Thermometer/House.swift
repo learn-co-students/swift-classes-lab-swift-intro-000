@@ -9,4 +9,10 @@
 import Foundation
 
 
-
+class House{
+    let thermometer = Thermometer(fahrenheit: 75.0)
+    
+    func grandmaIsOver() {
+        self.thermometer.fahrenheit = 90.0
+    }
+}
