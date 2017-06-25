@@ -6,7 +6,13 @@
 //  Copyright © 2017 Jim Campagno. All rights reserved.
 //
 
-import Foundation
+import Foundation 
 
+class House {
+    let thermometer = Thermometer(fahrenheit: 75.0)
 
-
+    func grandmaIsOver() {
+        thermometer.fahrenheit = 90
+    }
+    
+}
