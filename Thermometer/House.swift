@@ -9,4 +9,16 @@
 import Foundation
 
 
-
+class House: Thermometer {
+    
+    var thermometer: Thermometer = Thermometer.init(fahrenheit: 75)
+    
+/*    init (thermometer: Thermometer) {
+        self.thermometer = thermometer
+    } */
+    
+    func grandmaIsOver() {
+        thermometer.fahrenheit = 90
+    }
+    
+}

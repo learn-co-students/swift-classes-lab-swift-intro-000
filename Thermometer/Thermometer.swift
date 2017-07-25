@@ -9,4 +9,23 @@
 import Foundation
 
 
-
+class Thermometer {
+    
+    var fahrenheit: Double
+    var description: String {
+        return "Fahrenheit: \(fahrenheit)\nCelsius: \(celsius)"
+    }
+    var celsius: Double {
+        get {
+            return (fahrenheit - 32) * 5/9
+        }
+        set {
+            fahrenheit = (newValue * 9/5) + 32
+        }
+    }
+    
+    init(fahrenheit: Double) {
+        self.fahrenheit = fahrenheit
+    }
+    
+}
