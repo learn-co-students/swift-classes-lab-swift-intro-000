@@ -20,7 +20,7 @@ class Thermometer {
         
     }
     var description: String {
-        return "The current temperature is \(fahrenheit)°F (\(celsius)°C)"
+        return "Fahrenheit: \(self.fahrenheit)\nCelsius: \(self.celsius)"
     }
     
     init(fahrenheit: Double) {
