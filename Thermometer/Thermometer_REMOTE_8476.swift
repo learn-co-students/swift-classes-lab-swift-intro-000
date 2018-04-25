@@ -11,22 +11,18 @@ import Foundation
 class Thermometer {
     var fahrenheit: Double
     var celsius: Double {
-        
         get {
             return (fahrenheit - 32) * (5/9)
         }
-        
         set {
-            let newValue: Double = ((fahrenheit * (9/5)) / 2) + 32
-            fahrenheit = newValue
+           self.fahrenheit = (celsius * (5/9)) + 32
         }
     }
-    
     var description: String {
-        return "Fahrenheit: \(fahrenheit)\nCelsius: \(celsius)"
+        return "Fahrenheit: \(self.fahrenheit)\nCelsius: \(self.celsius)"
     }
     
-    init(fahrenheit: Double) {
+    init (fahrenheit: Double) {
         self.fahrenheit = fahrenheit
     }
 }
