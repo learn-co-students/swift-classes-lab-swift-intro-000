@@ -444,6 +444,7 @@
 				7DB1B0FB1E3FE96B007DD7A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DB1B0FC1E3FE96B007DD7A2 /* Build configuration list for PBXNativeTarget "ThermometerTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +453,7 @@
 				7DB1B0FE1E3FE96B007DD7A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
